@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 
 
-def xml_parsing(tree):
+def xml_parsing(tree): # xml parsing function
     root = tree.getroot()
     bounding_boxes = []
     for child in root.iter('object'):
@@ -50,7 +50,7 @@ def main():
     row_wise_boxes = get_row_wise_boxes(bounding_boxes)
     final_sorted_list = []
     for row in row_wise_boxes:
-        print(row)
+        # print(row)
         final_sorted_list.extend(sorted(row, key=lambda x: x[1]))  # sort each individual row based xmin coordinate
     print(final_sorted_list)
 
